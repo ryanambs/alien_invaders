@@ -50,10 +50,7 @@ def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
         stats.game_active = True
 
         # Reset the scoreboard images.
-        sb.prep_score()
-        sb.prep_high_score()
-        sb.prep_level()
-        sb.prep_ships()
+        sb.prep_images()
 
         # Empty the list of aliens and bullets.
         aliens.empty()
@@ -83,6 +80,7 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_bu
     """"Update images on the screen and flip to a new screen."""
     # Redraw the screen during each pass through the loop.
     screen.fill(ai_settings.bg_color)
+
     # Redraw all bullets behind ship and aliens.
     for bullet in bullets.sprites():
         bullet.draw_bullet()
